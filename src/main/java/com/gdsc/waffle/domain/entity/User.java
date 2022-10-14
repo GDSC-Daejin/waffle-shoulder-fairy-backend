@@ -1,31 +1,41 @@
 package com.gdsc.waffle.domain.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
-
+@Getter
+@Builder
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "user")
 @Entity
-public class User extends BaseTimeEntity{
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    static Long id;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
     @Column
-    static String email;
+    private String email;
 
     @Column
-    static String password;
+    private String password;
 
     @Column
-    static String nickname;
+    private String nickname;
+
+    @Column(name = "date_created")
+    @DateTimeFormat(pattern = "YYYY-MM-dd")
+    private LocalDate dateCreated;
 
     @Column
-    static Boolean withdraw;
+    private Boolean withdraw;
+
 
 
 }
-
