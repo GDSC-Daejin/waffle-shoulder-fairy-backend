@@ -23,6 +23,7 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
+    //목록
     @GetMapping
     public List<CategoryEntity> index(){
         System.out.println("성공");
