@@ -1,10 +1,8 @@
 package com.gdsc.waffle.domain.entity;
 
 import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 @Getter
 @Builder
@@ -14,7 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Table(name = "category")
 @Entity
-public class Category {
+public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -23,10 +21,12 @@ public class Category {
     @Column
     private String category;
 
-    @ManyToOne
-    @JoinColumn (name = "user_id")
-    private User userId;
 
-
-
+    public boolean patch(CategoryEntity categoryEntity) {
+        if(categoryEntity.category != null){
+            this.category=categoryEntity.category;
+            return true;
+        }
+        return false;
+    }
 }

@@ -3,16 +3,17 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/waffle?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
-    username: jsangmin
-    password: shn06124
+    url: jdbc:mysql://34.64.99.205:3306/web_db?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+    username: webadmin
+    password: 1q2w3e4r
   jpa:
     hibernate:
       ddl-auto: update # ??? ??? ??? ??? ??
     show-sql: true # mysql debug mode, ?? ??? ??? ??
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database-platform: org.hibernate.dialect.MySQL8Dialect
     properties:
       hibernate: # custom options
         format_sql: true # sql ??? ????? ???
+
 
 

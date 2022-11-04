@@ -1,7 +1,6 @@
 package com.gdsc.waffle.domain.entity;
 
 import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -25,15 +24,12 @@ public class ToDo {
     private String memo;
 
     @Column(name = "date_created")
-    @DateTimeFormat(pattern = "YYYY-MM-dd-HH:mm:ss")
     private LocalDate dateCreated;
 
     @Column(name = "last_update")
-    @DateTimeFormat(pattern = "YYYY-MM-dd-HH:mm:ss")
-    private LocalDate lastUpdare;
+    private LocalDate lastUpdate;
 
     @Column(name = "date_target")
-    @DateTimeFormat(pattern = "YYYY-MM-dd-HH:mm:ss")
     private LocalDate dateTarget;
 
     @Column
@@ -42,12 +38,10 @@ public class ToDo {
     @Column
     private Boolean deleted;
 
-    @ManyToOne
-    @JoinColumn (name = "user_id")
-    private User userId;
+
 
     @ManyToOne
     @JoinColumn (name = "category_id")
-    private Category categoryId;
+    private CategoryEntity categoryId;
 
 }
