@@ -56,7 +56,7 @@ public class CategoryController {
                 ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
-    //카태고리 삭제
+    //카태고리  삭제
     @DeleteMapping("/{id}")
     public ResponseEntity <CategoryEntity> delete(@PathVariable Long id){
         CategoryEntity deleted = categoryService.delete(id);
