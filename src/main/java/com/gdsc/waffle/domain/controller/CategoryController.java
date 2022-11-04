@@ -23,19 +23,19 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping("/category/")
+    @GetMapping
     public List<CategoryEntity> index(){
         System.out.println("성공");
         return categoryService.index();
     }
 
-    @GetMapping("/category/{id}")
+    @GetMapping("/{id}")
     public CategoryEntity show(@PathVariable Long id){
         System.out.println("성공");
         return categoryService.show(id);
     }
     //카태고리 생성
-    @PostMapping("/category")
+    @PostMapping
     public ResponseEntity<CategoryEntity> create(@RequestBody CategoryDto dto){
         //서비스에게 넘겨줌
         CategoryEntity created = categoryService.create(dto);
@@ -46,7 +46,7 @@ public class CategoryController {
     }
 
     //카태고리 수정
-    @PatchMapping("api/category/{id}")
+    @PatchMapping("/{id}")
     public ResponseEntity<CategoryEntity> update(@PathVariable Long id,
                                                  @RequestBody CategoryDto dto){
         CategoryEntity updated = categoryService.update(id,dto);
@@ -56,7 +56,7 @@ public class CategoryController {
     }
 
     //카태고리 삭제
-    @DeleteMapping("api/category/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity <CategoryEntity> delete(@PathVariable Long id){
         CategoryEntity deleted = categoryService.delete(id);
         return (deleted != null) ?
