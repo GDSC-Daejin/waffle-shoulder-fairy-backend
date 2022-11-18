@@ -14,7 +14,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/category/")
+@RequestMapping("/category")
 public class CategoryController {
     @GetMapping("/hello")
     public String hello() {
@@ -26,13 +26,13 @@ public class CategoryController {
     //목록
     @GetMapping
     public List<CategoryEntity> index(){
-        System.out.println("성공");
+        System.out.println("성공1");
         return categoryService.index();
     }
 
     @GetMapping("/{id}")
     public CategoryEntity show(@PathVariable Long id){
-        System.out.println("성공");
+        System.out.println("성공2");
         return categoryService.show(id);
     }
     //카태고리 생성

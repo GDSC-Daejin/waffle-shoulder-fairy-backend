@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Objects;
 
@@ -24,18 +25,20 @@ public class CategoryService {
         return categoryRepository.findById(id).orElse(null);
     }
 
+    @Transactional
     public CategoryEntity create(CategoryDto dto) {
         CategoryEntity category= dto.toEntity();
         if(category.getId() != null){
             return null;
         }
-       return categoryRepository.save(category);
+        return categoryRepository.save(category);
     }
 
+    @Transactional
     public CategoryEntity update(Long id, CategoryDto dto) {
         //1.엔티티 생성
         CategoryEntity categoryEntity= dto.toEntity();
-        log.info("id: {} ,article: {}", id, categoryEntity.toString());
+        log.info("id: {} , 카테고리: {}", id, categoryEntity.toString());
 
         //2. 대상 엔티티를 조회
         CategoryEntity target = categoryRepository.findById(id).orElse(null);
@@ -43,7 +46,7 @@ public class CategoryService {
         //3. 잘못된 요청 처리
         if(target ==null || !id.equals(categoryEntity.getId())){
             //400 잘목된 요청응답
-            log.info("잘못된 요청 id: {}, article: {}", id, categoryEntity.toString());
+            log.info("잘못된 요청 id: {}, 카테고리: {}", id, categoryEntity.toString());
             return null;
         }
         //4. 업데이트 및 정상응답(200)
@@ -54,6 +57,7 @@ public class CategoryService {
         return categoryRepository.save(target);
     }
 
+    @Transactional
     public CategoryEntity delete(Long id) {
         CategoryEntity target =  categoryRepository.findById(id).orElse(null);
         categoryRepository.delete(Objects.requireNonNull(target));
