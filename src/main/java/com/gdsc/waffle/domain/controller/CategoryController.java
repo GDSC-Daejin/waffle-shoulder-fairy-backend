@@ -16,10 +16,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/category")
 public class CategoryController {
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello World";
-    }
     @Autowired
     private CategoryService categoryService;
 

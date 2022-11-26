@@ -2,15 +2,17 @@ package com.gdsc.waffle.domain.entity;
 
 import com.gdsc.waffle.domain.dto.ToDoDto;
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 @Getter
+@Builder
 @Setter
 @ToString
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "todo")
 @Entity
 public class ToDo {
@@ -30,14 +32,17 @@ public class ToDo {
     @Column(name = "last_update")
     private LocalDate lastUpdate;
 
-    @Column(name = "date_target")
-    private LocalDate dateTarget;
+    //@Column(name = "date_target")
+    //private LocalDate dateTarget;
 
     @Column
+    @ColumnDefault("false")
     private Boolean status;
 
     @Column
+    @ColumnDefault("false")
     private Boolean deleted;
+
 
 
 
@@ -61,7 +66,7 @@ public class ToDo {
                 dto.getMemo(),
                 dto.getDateCreated(),
                 dto.getLastUpdate(),
-                dto.getDateTarget(),
+                //dto.getDateTarget(),
                 dto.getStatus(),
                 dto.getDeleted(),
                 category

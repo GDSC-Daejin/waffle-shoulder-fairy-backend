@@ -6,12 +6,15 @@ import com.gdsc.waffle.domain.entity.CategoryEntity;
 import com.gdsc.waffle.domain.entity.ToDo;
 import com.gdsc.waffle.domain.repository.CategoryRepository;
 import com.gdsc.waffle.domain.repository.ToDoRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
-
+@Slf4j
+@Service
 public class ToDoService {
     @Autowired
     private CategoryRepository categoryRepository;

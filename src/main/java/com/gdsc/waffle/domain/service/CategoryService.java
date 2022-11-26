@@ -15,7 +15,7 @@ import java.util.Objects;
 @Slf4j
 @Service
 public class CategoryService {
-    @Autowired //D  I
+    @Autowired //DI
     private CategoryRepository categoryRepository;
     public List<CategoryEntity> index(){
         return categoryRepository.findAll();
