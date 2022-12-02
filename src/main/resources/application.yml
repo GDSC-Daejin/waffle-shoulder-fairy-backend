@@ -1,28 +1,28 @@
 
 
 spring:
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://34.64.99.205:3306/web_db?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
-#    username: webadmin
-#    password: 1q2w3e4r
-#  jpa:
-#    hibernate:
-#      ddl-auto: update # ??? ??? ??? ??? ??
-#    show-sql: true # mysql debug mode, ?? ??? ??? ??
-#    database-platform: org.hibernate.dialect.MySQL8Dialect
-#    properties:
-#      hibernate: # custom options
-#        format_sql: true # sql ??? ????? ???
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
-  jpa:
-    defer-datasource-initialization: true
   datasource:
-    generate-unique-name: false
-    url: jdbc:h2:mem:testdb
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://34.64.99.205:3306/web_db?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+    username: webadmin
+    password: 1q2w3e4r
+  jpa:
+    hibernate:
+      ddl-auto: update # ??? ??? ??? ??? ??
+    show-sql: true # mysql debug mode, ?? ??? ??? ??
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:
+      hibernate: # custom options
+        format_sql: true # sql ??? ????? ???
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
+#  jpa:
+#    defer-datasource-initialization: true
+#  datasource:
+#    generate-unique-name: false
+#    url: jdbc:h2:mem:testdb
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
