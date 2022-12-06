@@ -17,10 +17,10 @@ public class ToDoDto {
     private  Long id;
     private String content;
     private String memo;
-    private LocalDate dateCreated;
-    private LocalDate lastUpdate;
-    //private LocalDate dateTarget;
-    private Boolean status;
+    //private LocalDate dateCreated;
+    //private LocalDate lastUpdate;
+    private LocalDate dateTarget;
+    private Boolean IsChecked;
     private Boolean deleted;
 
     @JsonProperty
@@ -31,10 +31,10 @@ public class ToDoDto {
                 todo.getId(),
                 todo.getContent(),
                 todo.getMemo(),
-                todo.getDateCreated(),
-                todo.getLastUpdate(),
-                //todo.getDateTarget(),
-                todo.getStatus(),
+                //todo.getDateCreated(),
+                //todo.getLastUpdate(),
+                todo.getDateTarget(),
+                todo.getIsChecked(),
                 todo.getDeleted(),
                 todo.getCategory().getId()
         );

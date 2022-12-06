@@ -26,18 +26,18 @@ public class ToDo {
     @Column
     private String memo;
 
-    @Column(name = "date_created")
-    private LocalDate dateCreated;
+    //@Column(name = "date_created")
+    //private LocalDate dateCreated;
 
-    @Column(name = "last_update")
-    private LocalDate lastUpdate;
+    //@Column(name = "last_update")
+    //private LocalDate lastUpdate;
 
-    //@Column(name = "date_target")
-    //private LocalDate dateTarget;
+    @Column(name = "date_target")
+    private LocalDate dateTarget;
 
     @Column
     @ColumnDefault("false")
-    private Boolean status;
+    private Boolean IsChecked;
 
     @Column
     @ColumnDefault("false")
@@ -64,10 +64,10 @@ public class ToDo {
                 dto.getId(),
                 dto.getContent(),
                 dto.getMemo(),
-                dto.getDateCreated(),
-                dto.getLastUpdate(),
-                //dto.getDateTarget(),
-                dto.getStatus(),
+                //dto.getDateCreated(),
+                //dto.getLastUpdate(),
+                dto.getDateTarget(),
+                dto.getIsChecked(),
                 dto.getDeleted(),
                 category
         );
