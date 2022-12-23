@@ -39,6 +39,9 @@ public class ToDo {
     @ColumnDefault("false")
     private Boolean IsChecked;
 
+    @Column
+    @ColumnDefault("false")
+    private Boolean deleted;
 
 
 
@@ -65,6 +68,7 @@ public class ToDo {
                 //dto.getLastUpdate(),
                 dto.getDateTarget(),
                 dto.getIsChecked(),
+                dto.getDeleted(),
                 category
         );
     }
