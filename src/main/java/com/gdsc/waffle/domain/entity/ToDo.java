@@ -6,6 +6,7 @@ import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Getter
 @Builder
@@ -39,9 +40,9 @@ public class ToDo {
     @ColumnDefault("false")
     private Boolean IsChecked;
 
-    @Column
-    @ColumnDefault("false")
-    private Boolean deleted;
+    //@Column
+    //@ColumnDefault("false")
+    //private Boolean deleted;
 
 
 
@@ -55,7 +56,7 @@ public class ToDo {
         if (dto.getId() != null) {
             throw new IllegalArgumentException("todo 생성 실패! 새애의 ID가 있어야 합니다.");
         }
-        if (dto.getCategoryId() != category.getId()) {
+        if (!Objects.equals(dto.getCategoryId(), category.getId())) {
             throw new IllegalArgumentException("todo 생성 실패! 카테고리의 id가 잘못되었습니다.");
         }
 
@@ -68,14 +69,14 @@ public class ToDo {
                 //dto.getLastUpdate(),
                 dto.getDateTarget(),
                 dto.getIsChecked(),
-                dto.getDeleted(),
+                //dto.getDeleted(),
                 category
         );
     }
 
     public void patch(ToDoDto dto) {
         // 예외 발생
-        if (this.id != dto.getId())
+        if (!Objects.equals(this.id, dto.getId()))
             throw new IllegalArgumentException("댓글 수정 실패! 잘못된 id가 입력되었습니다.");
         // 객체를 갱신
         if (dto.getContent() != null)

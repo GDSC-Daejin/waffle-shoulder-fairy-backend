@@ -21,7 +21,7 @@ public class ToDoDto {
     //private LocalDate lastUpdate;
     private LocalDate dateTarget;
     private Boolean IsChecked;
-    private Boolean deleted;
+    //private Boolean deleted;
 
     @JsonProperty
     private Long categoryId;
@@ -35,7 +35,7 @@ public class ToDoDto {
                 //todo.getLastUpdate(),
                 todo.getDateTarget(),
                 todo.getIsChecked(),
-                todo.getDeleted(),
+                //todo.getDeleted(),
                 todo.getCategory().getId()
         );
     }
