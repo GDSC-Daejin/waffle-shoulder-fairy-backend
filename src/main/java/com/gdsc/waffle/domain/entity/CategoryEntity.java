@@ -1,5 +1,6 @@
 package com.gdsc.waffle.domain.entity;
 
+import com.sun.istack.NotNull;
 import lombok.*;
 
 import javax.persistence.*;
@@ -15,10 +16,11 @@ import javax.persistence.*;
 public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column
     private Long id;
 
     @Column
+    @NotNull
     private String category;
 
 

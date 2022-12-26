@@ -1,6 +1,7 @@
 package com.gdsc.waffle.domain.entity;
 
 import com.gdsc.waffle.domain.dto.ToDoDto;
+import com.sun.istack.NotNull;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
@@ -22,6 +23,7 @@ public class ToDo {
     private Long id;
 
     @Column
+    @NotNull
     private String content;
 
     @Column
@@ -37,15 +39,12 @@ public class ToDo {
     //private LocalDate dateTarget;
 
     @Column
-    @ColumnDefault("false")
+    @ColumnDefault("true")
     private Boolean IsChecked;
 
     //@Column
     //@ColumnDefault("false")
     //private Boolean deleted;
-
-
-
 
     @ManyToOne
     @JoinColumn (name = "category_id")
