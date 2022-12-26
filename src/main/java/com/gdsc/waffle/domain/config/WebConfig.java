@@ -10,7 +10,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("https://vercel.com/gdsc-dju-gds/waffle-shoulder-fairy-frontend","https://waffle-shoulder-fairy-frontend.vercel.app")
+                .allowedOrigins("https://vercel.com/gdsc-dju-gds/waffle-shoulder-fairy-frontend","https://waffle-shoulder-fairy-frontend.vercel.app","https://localhost:3000")
                 .allowedMethods("GET","POST","PATCH","DELETE");
 
     }
