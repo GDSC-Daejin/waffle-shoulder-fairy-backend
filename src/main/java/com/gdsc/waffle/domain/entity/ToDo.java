@@ -33,8 +33,8 @@ public class ToDo {
     //@Column(name = "last_update")
     //private LocalDate lastUpdate;
 
-    @Column(name = "date_target")
-    private LocalDate dateTarget;
+    //@Column(name = "date_target")
+    //private LocalDate dateTarget;
 
     @Column
     @ColumnDefault("false")
@@ -67,7 +67,7 @@ public class ToDo {
                 dto.getMemo(),
                 //dto.getDateCreated(),
                 //dto.getLastUpdate(),
-                dto.getDateTarget(),
+                //dto.getDateTarget(),
                 dto.getIsChecked(),
                 //dto.getDeleted(),
                 category

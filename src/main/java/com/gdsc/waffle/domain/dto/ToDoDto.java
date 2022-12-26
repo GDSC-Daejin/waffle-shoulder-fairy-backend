@@ -19,7 +19,7 @@ public class ToDoDto {
     private String memo;
     //private LocalDate dateCreated;
     //private LocalDate lastUpdate;
-    private LocalDate dateTarget;
+    //private LocalDate dateTarget;
     private Boolean IsChecked;
     //private Boolean deleted;
 
@@ -33,7 +33,7 @@ public class ToDoDto {
                 todo.getMemo(),
                 //todo.getDateCreated(),
                 //todo.getLastUpdate(),
-                todo.getDateTarget(),
+                //todo.getDateTarget(),
                 todo.getIsChecked(),
                 //todo.getDeleted(),
                 todo.getCategory().getId()
